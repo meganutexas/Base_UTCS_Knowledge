@@ -1,0 +1,165 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+\usepackage{titlesec}					%custom \section
+\usepackage{enumitem}
+\setlist{nosep}
+
+%Font stuff
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+%Variables to be used within the document
+\newcommand{\leftindent}{.25in}
+\newcommand{\subleftindent}{.5in}
+\newcommand{\middleindent}{3in}
+\newcommand{\rightindent}{6.75in}
+\newcommand{\listindent}{.6in}
+\newcommand{\sectionseparation}{-.05in}
+
+%Command that controls the formatting for a single experience entry
+\newcommand{\showexperience} {
+\begin{tabbing}
+\hspace{\leftindent} \= \hspace{\rightindent} \= \kill % set up tab position
+\>\textbf{\experienceplace} \> \experiencedate \' \\
+\>\textit{\experiencetitle}
+\end{tabbing}
+\vspace{\sectionseparation}	
+\begin{itemize} [leftmargin=\listindent]
+\experienceitems
+\end{itemize}
+} %end of showexperience command
+
+%Command that controls the formatting for a single project entry
+\newcommand{\showproject} {
+\begin{tabbing}
+\hspace{\leftindent} \= \hspace{\rightindent} \= \kill % set up tab position
+\>\textbf{\projectname} \> \projectdate \'
+\end{tabbing}
+\vspace{\sectionseparation}	
+\begin{itemize} [leftmargin=\listindent]
+\projectitems
+\end{itemize}
+} %end of showproject command
+
+%Changes to page margins
+\addtolength{\oddsidemargin}{-.75in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.75in}
+	
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+%--------------------TITLE-------------
+\begin{center}
+\par{\Huge First \textsc{Last}\par}
+email@email.com \\
+(555) 555-5555
+\end{center}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Education at the top
+\section{Education} 
+\begin{tabbing}
+\hspace{\leftindent} \= \hspace{\rightindent}\= \kill % set up tab positions
+\>\textbf{University of Texas at Austin} \> \textit{Graduating:} Month XXXX \' \\
+\>Bachelor of [WHATEVER] in Computer Science \> \textit{GPA:} X.XX \' 
+\end{tabbing}
+
+%Section: Skills
+\vspace{\sectionseparation}
+\section{Skills} 
+\begin{tabbing}
+\hspace{\leftindent} \= \kill % set up tab position
+\>\textbf{Category 1:} A, B, C, D ... \\
+\>\textbf{Category 2:} Stuffs
+\end{tabbing}
+
+%Section: Courses
+\vspace{\sectionseparation}
+\section{Courses} 
+\begin{tabbing}
+\hspace{\leftindent} \= \hspace{\middleindent} \= \kill % set up tab position
+\>A \> B \\
+\>C \> D \\
+\>E \> F
+\end{tabbing}
+
+%Section: Experience
+\vspace{\sectionseparation}
+\section{Experience}
+
+\newcommand{\experienceplace}{Company A}
+\newcommand{\experiencedate}{Start - End}
+\newcommand{\experiencetitle}{Title}
+\newcommand{\experienceitems} {
+\item Description
+}
+\showexperience 
+
+\renewcommand{\experienceplace}{Company B}
+\renewcommand{\experiencedate}{Start - End}
+\renewcommand{\experiencetitle}{Title}
+\renewcommand{\experienceitems} {
+\item Description
+\item Blah Blah Blah
+}
+\showexperience 
+
+%Section: Projects
+\vspace{\sectionseparation}
+\section{Projects} 
+
+\newcommand{\projectname}{Project A Name}
+\newcommand{\projectdate}{Date}
+\newcommand{\projectitems}{
+\item Description
+}
+\showproject
+
+\renewcommand{\projectname}{Project B Name}
+\renewcommand{\projectdate}{Date}
+\renewcommand{\projectitems}{
+ \item Description
+}
+\showproject
+
+\renewcommand{\projectname}{Project C Name}
+\renewcommand{\projectdate}{Date}
+\renewcommand{\projectitems}{
+\item Description
+}
+\showproject
+
+%Section: Activities
+\vspace{\sectionseparation}
+\section{Activities}
+\begin{tabbing}
+\hspace{\leftindent} \= \hspace{\middleindent} \= \kill % set up tab position
+\>A \> B \\
+\>C \> D \\
+\>E \> F \\
+\end{tabbing}
+
+\end{document}

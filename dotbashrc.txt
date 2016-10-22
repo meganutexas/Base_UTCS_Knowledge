@@ -1,0 +1,47 @@
+#short hands for the PS1 - command prompt
+RESET="\[\017\]"
+NORMAL="\[\033[0m\]"
+RED="\[\033[31m\]"
+YELLOW="\[\033[33m\]"
+WHITE="\[\033[37m\]"
+GREEN="\[\033[32m\]"
+PURPLE="\[\033[95m\]"
+BLUE="\[\033[1;36m\]"
+SMILEY="${GREEN}:)${NORMAL}"
+FROWNY="${RED}:(${NORMAL}"
+SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
+
+# Throw it all together 
+PS1="${RESET}${BLUE}\u${GREEN}@\h in \w ${NORMAL} \`${SELECT}\` ${GREEN}\n>${PURPLE} "
+
+alias c="clear"
+
+login() {
+	ssh meg1022@${1}.cs.utexas.edu
+}
+
+alias login=login
+alias printer='lpq -Plw301'
+alias stopPrint='lprm -Plw301 meg1022'
+alias root='cd ~'
+alias gitDelete='git status | grep 'deleted:' | cut -d':' -f2 | xargs -t -I {} git add -u "{}"'
+
+# make man pages prettier
+export LESS_TERMCAP_mb=$'\E[01;36m'
+export LESS_TERMCAP_md=$'\E[01;36m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# cd aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+#enable color support of ls and grep
+alias ls='ls --color=auto'
+alias grep='fgrep --color=auto'
+
+alias pico='picocom /dev/ttyUSB0 -b 115200'
