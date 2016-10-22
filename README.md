@@ -6,4 +6,4 @@ Hopefully some of it will keep you from feeling overwhelmed or stupid as you con
 
 ## Enjoy! :)
 
-If you have edit suggestions or what something added feel free to email me at megan.avery720@gmail.com
+If you have edit suggestions or want something added feel free to email me at megan.avery720@gmail.com
