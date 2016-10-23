@@ -9,14 +9,6 @@ YELLOW="\033[33m"
 GREEN="\033[32m"
 
 echo -e "${WHITE}"
-if [ "$#" -eq 0 ]; then
-	echo "------------------------------------------"
-	echo -e "${RED}ERROR:${WHITE} Must have at least one argument!"
-	echo -e "   ${CYAN}usage:${WHITE} source backtrace.sh [call stack]"
-	echo "------------------------------------------"
-	echo ""
-	return
-fi
 
 echo -e -n "Enter the name of the binary to do backtrace on:${CYAN} "
 read BINARY
@@ -34,7 +26,11 @@ if [ $ERROR -ne 0 ]; then
 	return
 fi
 
-for i in $@
+echo -e -n "Enter the call stack:${CYAN} "
+read CALLSTACK
+echo -e "${WHITE}"
+
+for i in $CALLSTACK
 do
 	LINE=$(grep -n "$i" dump.txt | cut -f1 -d:)
 	TEST=$(head -n $LINE dump.txt 2>&1 | grep -c invalid)
@@ -56,7 +52,7 @@ echo -e "   ${YELLOW}Note:${WHITE} if file name and line number are ${PURPLE}UNK
 echo "--------------------------------------------------------------------------------"
 echo  ""
 
-for i in $@
+for i in $CALLSTACK
 do
 	LINE=$(grep -n "$i" dump.txt | cut -f1 -d:)
 	FUNCTION=$(head -n $LINE dump.txt | tac | grep -m 1 -e ">:" | cut -f2 -d\<)
