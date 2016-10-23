@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Colors {
 	//Formatting
-	static final String NORMAL 			    = "\033[0m\0";
-	static final String BOLD 		        = "\033[1m\0";
+	static final String NORMAL              = "\033[0m\0";
+	static final String BOLD 		= "\033[1m\0";
 	static final String DIM                 = "\033[2m\0";
 	static final String UNDERLINED          = "\033[4m\0";
 	static final String INVERT              = "\033[7m\0";
