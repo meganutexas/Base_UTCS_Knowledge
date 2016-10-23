@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 //Formatting
-#define NORMAL 			    "\033[0m\0"
-#define BOLD 		        "\033[1m\0"
+#define NORMAL              "\033[0m\0"
+#define BOLD 		    "\033[1m\0"
 #define DIM                 "\033[2m\0"
 #define UNDERLINED          "\033[4m\0"
 #define INVERT              "\033[7m\0"
