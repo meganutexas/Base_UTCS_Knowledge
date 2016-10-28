@@ -8,4 +8,4 @@ Hopefully some of it will keep you from feeling overwhelmed or stupid as you con
 
 If you want something added feel free to email us at utcs.leanin@gmail.com!
 
-PS: All the pdfs have a red "SUGGEST AN EDIT" link at the bottom that will send you to the google doc that the pdfs were generated from with comment permissions. 
+PS: All the pdfs have a red "SUGGEST AN EDIT" link at the bottom that will send you to the google doc that the pdfs were generated from with comment permissions. (Note: you will have to download the pdf for the link to work)
